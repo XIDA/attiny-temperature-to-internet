@@ -1,4 +1,4 @@
 atiny-temperature-to-internet
 =============================
 
-Transmit temperature data from a atiny connected to a serial port to the internet (e.g. thingspeak)
+Transmit temperature data from an atiny connected to a serial port to the internet (e.g. thingspeak)
