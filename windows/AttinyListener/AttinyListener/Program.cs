@@ -1,105 +1,221 @@
 ﻿using System;
+using System.Linq;
 using System.IO.Ports;
 using System.Threading;
 using System.Net;
+using System.Collections.Generic;
+using System.Management;
+using System.Windows;
+using System.Windows.Forms;
+using System.Drawing;
 
-namespace TestCom
+namespace AttinyListener
 {
 	class MainClass
 	{
-		static bool _continue;
-		static SerialPort _serialPort;
-		static int _transmitValue = 60;
-		static int _counter = 0;
-		static double _sum;
+        private static ISubmiter submiter;
+        public static ISubmiter Submiter 
+        {
+            get
+            {
+                if (submiter == null)
+                {
+                    submiter = new ThingspeakSubmiter(
+                        Properties.Settings.Default.ThingspeakApiKey,
+                        Properties.Settings.Default.ThingspeakChannelId,
+                        Properties.Settings.Default.ThingspeakSubmitFieldName,
+                        Properties.Settings.Default.ThingspeakSubmitInterval
+                    );
+                }
+                return submiter;
+            }
+        }
 
-		public static void Main (string[] args)
-		{
-			string name;
-			string message;
-			StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
-			Thread readThread = new Thread(Read);
+        private static IConnection connection;
+        public static IConnection Connection 
+        {
+            get
+            {
+                if (connection == null)
+                {
+                    connection = new AttinyConnection(
+                        Submiter,
+                        Properties.Settings.Default.SerialPort,
+                        Properties.Settings.Default.SerialTimeout
+                    );
+                }
+                
+                return connection;
+            }        
+        }
 
-			// Create a new SerialPort object with default settings.
-			_serialPort = new SerialPort();
+        private static SettingsForm settingsFormInstance;
+        private static SettingsForm settingsForm
+        {
+            get
+            {
+                if (settingsFormInstance != null && settingsFormInstance.Visible)
+                {
+                    return settingsFormInstance;
+                }
+                return (settingsFormInstance = new SettingsForm());
+            }
+        }
 
-			// Allow the user to set the appropriate properties.
-			_serialPort.PortName = "COM3";
-			_serialPort.BaudRate = 9600;
-			_serialPort.Parity = Parity.None;
-			_serialPort.StopBits = StopBits.One;
-			_serialPort.DataBits = 8;
-			_serialPort.Handshake = Handshake.None;
+        private static NotifyIcon trayInstance;
+        private static NotifyIcon tray
+        {
+            get
+            {
+                if (trayInstance != null)
+                {
+                    return trayInstance;
+                }
+                return (trayInstance = new NotifyIcon());
+            }
+        }
 
-			// Set the read/write timeouts
-			_serialPort.ReadTimeout = 500;
-			_serialPort.WriteTimeout = 500;
+        [STAThread]
+        public static void Main(string[] args)
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);           
 
-			_serialPort.Open();
-			_continue = true;
-			readThread.Start();
+            using (tray)
+            {
+                //icon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+                tray.Icon = Properties.Resources.Icon;               
 
-			name = Console.ReadLine();
+                updateTrayIcon(0);
+                updateTrayText("Start");
 
-			//C onsole.WriteLine("Type QUIT to exit");
+                tray.ContextMenu = new ContextMenu(
+                    new MenuItem[] {
+                        new MenuItem("Settings", (s, e) => {
+                            Connection.Close();
+                            updateTrayText("Settings");
+                            MainClass.settingsForm.Show(); 
+                        }),
+                        new MenuItem("-"),
+                        new MenuItem("Restart", (s, e) => {
+                            Connection.Close();
+                            Application.Restart();
+                        }),
+                        new MenuItem("Exit", (s, e) => {
+                            Connection.Close();
+                            Application.Exit(); 
+                        })                       
+                    }
+                );
+                tray.Visible = true;               
 
-			while (_continue)
-			{
-				message = Console.ReadLine();
+                if (!ValidateSettings())
+                {
+                    MainClass.settingsForm.Show(); 
+                }
+                else
+                {
+                    Connection.Open();
+                }
 
-				if (stringComparer.Equals("quit", message))
-				{
-					_continue = false;
-				}
-				else
-				{
-					//_serialPort.WriteLine(String.Format("<{0}>: {1}", name, message));
-				}
-			}
+                Application.Run();
+                tray.Visible = false;
+            }
+        }
 
-			readThread.Join();
-			_serialPort.Close();
-		}
+        public static void updateTrayText(string text)
+        {
+            tray.Text = Application.ProductName + " - " + text;
+        }      
 
+        public static void updateTrayIcon(int temperature = 0) 
+        {
+            Color color = Color.Black;
 
-		public static void Read()
-		{
-			while (_continue)
-			{
-				try
-				{
-					string message = _serialPort.ReadLine();
-					//C onsole.WriteLine(message);
+            // determine a color for the temperature value
+            if (temperature < 15)
+            {
+                color = Color.DeepSkyBlue;
+            }
+            else if (temperature >= 15 && temperature < 20)
+            {
+                color = Color.Green;
+            }
+            else if (temperature >= 20 && temperature < 25)
+            {
+                color = Color.Yellow;
+            }
+            else if (temperature >= 25 && temperature < 30)
+            {
+                color = Color.Orange;
+            }
+            else if (temperature >= 30)
+            {
+                color = Color.Red;
+            }
 
-					double cVal;
-					double.TryParse(message.Replace(".", ","), out cVal);
-					Console.WriteLine(cVal);
-					_sum += cVal;
-					//C onsole.WriteLine("_sum " + _sum);
+            // draw the number into a bitmap            
+            Bitmap bitmap = new Bitmap(32, 32);
+            Graphics graphics   = Graphics.FromImage(bitmap);
 
-					if(_counter >= _transmitValue) {
-						_counter = 0;
-						double cAverage = _sum / (_transmitValue + 1);
-						Math.Round(cAverage, 1);
-						_sum = 0.0;
+            graphics.DrawString(temperature.ToString(), new Font("Arial", 18), new SolidBrush(color), 0, 4);
 
-						Console.WriteLine("cAverage " + cAverage);
-						string URI = "http://api.thingspeak.com/update?key=";
+            // generate ico from bitmap
+            IntPtr hIcon    = bitmap.GetHicon();
+            Icon ico        = Icon.FromHandle(hIcon);
 
-						string cSendVal = cAverage.ToString().Replace(",", ".");
-						string myParameters = "field1=" + cAverage;
+            // set the new icon
+            tray.Icon       = ico;
+        }
 
-						using (WebClient wc = new WebClient())
-						{
-							wc.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
-							string HtmlResult = wc.UploadString(URI, myParameters);
-						}
-					}
-					_counter++;
+        public static bool TestSubmiter()
+        {
+            if (String.IsNullOrEmpty(Properties.Settings.Default.ThingspeakApiKey))
+            {
+                MessageBox.Show("Please enter a thingspeak ApiKey");
+                return false;
+            }
 
-				}
-				catch (TimeoutException) { }
-			}
-		}
+            if (String.IsNullOrEmpty(Properties.Settings.Default.ThingspeakChannelId))
+            {
+                MessageBox.Show("Please enter a thingspeak Channel ID");
+                return false;
+            }
+
+            return Submiter.TestConnection(); 
+        }
+
+        public static bool TestConnection()
+        {
+            if (String.IsNullOrEmpty(Properties.Settings.Default.SerialPort))
+            {
+                MessageBox.Show("Please select a serial port");
+                return false;
+            }
+            return Connection.Test(); 
+        }
+
+        public static string[] AvailablePorts()
+        {
+            return Connection.AvailablePorts;
+        }
+
+        private static void openConnection()
+        {                   
+            Connection.Open();
+        }
+
+        public static bool ValidateSettings()
+        {
+            if(String.IsNullOrEmpty(Properties.Settings.Default.SerialPort)
+                || String.IsNullOrEmpty(Properties.Settings.Default.ThingspeakApiKey)
+                || String.IsNullOrEmpty(Properties.Settings.Default.ThingspeakChannelId))
+            {                
+                settingsForm.Show();
+                return false;                
+            }          
+
+            return true;
+        }
 	}
 }

@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="InputSerialPort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="InputSerialPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 25</value>
+  </data>
+  <data name="InputSerialPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 21</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="InputSerialPort.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;InputSerialPort.Name" xml:space="preserve">
+    <value>InputSerialPort</value>
+  </data>
+  <data name="&gt;&gt;InputSerialPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InputSerialPort.Parent" xml:space="preserve">
+    <value>GroupSerialSettings</value>
+  </data>
+  <data name="&gt;&gt;InputSerialPort.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labelCOMPort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="labelCOMPort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelCOMPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 28</value>
+  </data>
+  <data name="labelCOMPort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="labelCOMPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="labelCOMPort.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="labelCOMPort.Text" xml:space="preserve">
+    <value>COM Port</value>
+  </data>
+  <data name="&gt;&gt;labelCOMPort.Name" xml:space="preserve">
+    <value>labelCOMPort</value>
+  </data>
+  <data name="&gt;&gt;labelCOMPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelCOMPort.Parent" xml:space="preserve">
+    <value>GroupSerialSettings</value>
+  </data>
+  <data name="&gt;&gt;labelCOMPort.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ButtonSerialTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 89</value>
+  </data>
+  <data name="ButtonSerialTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>334, 25</value>
+  </data>
+  <data name="ButtonSerialTest.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ButtonSerialTest.Text" xml:space="preserve">
+    <value>Test Connection</value>
+  </data>
+  <data name="&gt;&gt;ButtonSerialTest.Name" xml:space="preserve">
+    <value>ButtonSerialTest</value>
+  </data>
+  <data name="&gt;&gt;ButtonSerialTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonSerialTest.Parent" xml:space="preserve">
+    <value>GroupSerialSettings</value>
+  </data>
+  <data name="&gt;&gt;ButtonSerialTest.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="InputSerialTimeout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="InputSerialTimeout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 56</value>
+  </data>
+  <data name="InputSerialTimeout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="InputSerialTimeout.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;InputSerialTimeout.Name" xml:space="preserve">
+    <value>InputSerialTimeout</value>
+  </data>
+  <data name="&gt;&gt;InputSerialTimeout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InputSerialTimeout.Parent" xml:space="preserve">
+    <value>GroupSerialSettings</value>
+  </data>
+  <data name="&gt;&gt;InputSerialTimeout.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelSerialTimeout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="labelSerialTimeout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelSerialTimeout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 58</value>
+  </data>
+  <data name="labelSerialTimeout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="labelSerialTimeout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 13</value>
+  </data>
+  <data name="labelSerialTimeout.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="labelSerialTimeout.Text" xml:space="preserve">
+    <value>Connection Timeout (Miliseconds)</value>
+  </data>
+  <data name="&gt;&gt;labelSerialTimeout.Name" xml:space="preserve">
+    <value>labelSerialTimeout</value>
+  </data>
+  <data name="&gt;&gt;labelSerialTimeout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSerialTimeout.Parent" xml:space="preserve">
+    <value>GroupSerialSettings</value>
+  </data>
+  <data name="&gt;&gt;labelSerialTimeout.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupSerialSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 15</value>
+  </data>
+  <data name="GroupSerialSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="GroupSerialSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 12, 6, 6</value>
+  </data>
+  <data name="GroupSerialSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>355, 124</value>
+  </data>
+  <data name="GroupSerialSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="GroupSerialSettings.Text" xml:space="preserve">
+    <value>Serial Port Settings</value>
+  </data>
+  <data name="&gt;&gt;GroupSerialSettings.Name" xml:space="preserve">
+    <value>GroupSerialSettings</value>
+  </data>
+  <data name="&gt;&gt;GroupSerialSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupSerialSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupSerialSettings.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 118</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Channel ID</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>GroupThingspeakSettings</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="InputThingspeakChannelId.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="InputThingspeakChannelId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 115</value>
+  </data>
+  <data name="InputThingspeakChannelId.MaxLength" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="InputThingspeakChannelId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="InputThingspeakChannelId.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakChannelId.Name" xml:space="preserve">
+    <value>InputThingspeakChannelId</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakChannelId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakChannelId.Parent" xml:space="preserve">
+    <value>GroupThingspeakSettings</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakChannelId.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ButtonThingspeakTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ButtonThingspeakTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 150</value>
+  </data>
+  <data name="ButtonThingspeakTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>334, 25</value>
+  </data>
+  <data name="ButtonThingspeakTest.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="ButtonThingspeakTest.Text" xml:space="preserve">
+    <value>Test API</value>
+  </data>
+  <data name="&gt;&gt;ButtonThingspeakTest.Name" xml:space="preserve">
+    <value>ButtonThingspeakTest</value>
+  </data>
+  <data name="&gt;&gt;ButtonThingspeakTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonThingspeakTest.Parent" xml:space="preserve">
+    <value>GroupThingspeakSettings</value>
+  </data>
+  <data name="&gt;&gt;ButtonThingspeakTest.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelThingspeakApiKey.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="labelThingspeakApiKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelThingspeakApiKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelThingspeakApiKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 88</value>
+  </data>
+  <data name="labelThingspeakApiKey.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="labelThingspeakApiKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="labelThingspeakApiKey.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="labelThingspeakApiKey.Text" xml:space="preserve">
+    <value>API Key</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakApiKey.Name" xml:space="preserve">
+    <value>labelThingspeakApiKey</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakApiKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakApiKey.Parent" xml:space="preserve">
+    <value>GroupThingspeakSettings</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakApiKey.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="InputThingspeakApiKey.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="InputThingspeakApiKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 85</value>
+  </data>
+  <data name="InputThingspeakApiKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="InputThingspeakApiKey.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakApiKey.Name" xml:space="preserve">
+    <value>InputThingspeakApiKey</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakApiKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakApiKey.Parent" xml:space="preserve">
+    <value>GroupThingspeakSettings</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakApiKey.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labelThingspeakSubmitFieldName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="labelThingspeakSubmitFieldName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelThingspeakSubmitFieldName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelThingspeakSubmitFieldName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 59</value>
+  </data>
+  <data name="labelThingspeakSubmitFieldName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="labelThingspeakSubmitFieldName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 13</value>
+  </data>
+  <data name="labelThingspeakSubmitFieldName.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="labelThingspeakSubmitFieldName.Text" xml:space="preserve">
+    <value>Submit Field Name</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakSubmitFieldName.Name" xml:space="preserve">
+    <value>labelThingspeakSubmitFieldName</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakSubmitFieldName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakSubmitFieldName.Parent" xml:space="preserve">
+    <value>GroupThingspeakSettings</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakSubmitFieldName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="InputThingspeakSubmitFieldName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 56</value>
+  </data>
+  <data name="InputThingspeakSubmitFieldName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="InputThingspeakSubmitFieldName.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="InputThingspeakSubmitFieldName.Text" xml:space="preserve">
+    <value>field1</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakSubmitFieldName.Name" xml:space="preserve">
+    <value>InputThingspeakSubmitFieldName</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakSubmitFieldName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakSubmitFieldName.Parent" xml:space="preserve">
+    <value>GroupThingspeakSettings</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakSubmitFieldName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="InputThingspeakSubmitInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 26</value>
+  </data>
+  <data name="InputThingspeakSubmitInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="InputThingspeakSubmitInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakSubmitInterval.Name" xml:space="preserve">
+    <value>InputThingspeakSubmitInterval</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakSubmitInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakSubmitInterval.Parent" xml:space="preserve">
+    <value>GroupThingspeakSettings</value>
+  </data>
+  <data name="&gt;&gt;InputThingspeakSubmitInterval.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="labelThingspeakSubmitInterval.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="labelThingspeakSubmitInterval.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelThingspeakSubmitInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelThingspeakSubmitInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 28</value>
+  </data>
+  <data name="labelThingspeakSubmitInterval.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="labelThingspeakSubmitInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 13</value>
+  </data>
+  <data name="labelThingspeakSubmitInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="labelThingspeakSubmitInterval.Text" xml:space="preserve">
+    <value>Submit Interval in Seconds</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakSubmitInterval.Name" xml:space="preserve">
+    <value>labelThingspeakSubmitInterval</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakSubmitInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakSubmitInterval.Parent" xml:space="preserve">
+    <value>GroupThingspeakSettings</value>
+  </data>
+  <data name="&gt;&gt;labelThingspeakSubmitInterval.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="GroupThingspeakSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 151</value>
+  </data>
+  <data name="GroupThingspeakSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="GroupThingspeakSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 12, 6, 6</value>
+  </data>
+  <data name="GroupThingspeakSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>355, 187</value>
+  </data>
+  <data name="GroupThingspeakSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="GroupThingspeakSettings.Text" xml:space="preserve">
+    <value>Thingspeak API</value>
+  </data>
+  <data name="&gt;&gt;GroupThingspeakSettings.Name" xml:space="preserve">
+    <value>GroupThingspeakSettings</value>
+  </data>
+  <data name="&gt;&gt;GroupThingspeakSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupThingspeakSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupThingspeakSettings.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ButtonSave.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="ButtonSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ButtonSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 424</value>
+  </data>
+  <data name="ButtonSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>355, 25</value>
+  </data>
+  <data name="ButtonSave.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="ButtonSave.Text" xml:space="preserve">
+    <value>Save and Start</value>
+  </data>
+  <data name="&gt;&gt;ButtonSave.Name" xml:space="preserve">
+    <value>ButtonSave</value>
+  </data>
+  <data name="&gt;&gt;ButtonSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ButtonSave.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CheckBoxStartup.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CheckBoxStartup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 27</value>
+  </data>
+  <data name="CheckBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="CheckBoxStartup.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="CheckBoxStartup.Text" xml:space="preserve">
+    <value>Run on Startup</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxStartup.Name" xml:space="preserve">
+    <value>CheckBoxStartup</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxStartup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxStartup.Parent" xml:space="preserve">
+    <value>GroupGeneralSettings</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxStartup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupGeneralSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 351</value>
+  </data>
+  <data name="GroupGeneralSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>355, 57</value>
+  </data>
+  <data name="GroupGeneralSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="GroupGeneralSettings.Text" xml:space="preserve">
+    <value>General Settings</value>
+  </data>
+  <data name="&gt;&gt;GroupGeneralSettings.Name" xml:space="preserve">
+    <value>GroupGeneralSettings</value>
+  </data>
+  <data name="&gt;&gt;GroupGeneralSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupGeneralSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupGeneralSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>385, 464</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Attiny Temperature</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SettingsForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
