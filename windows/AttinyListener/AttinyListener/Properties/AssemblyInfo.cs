@@ -4,12 +4,12 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle ("TestCom")]
+[assembly: AssemblyTitle("AttinyListener")]
 [assembly: AssemblyDescription ("")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("")]
+[assembly: AssemblyCompany("XIDA")]
 [assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("xd")]
+[assembly: AssemblyCopyright("XIDA")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 

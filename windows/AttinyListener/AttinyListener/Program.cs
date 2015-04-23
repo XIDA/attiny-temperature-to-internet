@@ -84,7 +84,7 @@ namespace AttinyListener
             using (tray)
             {
                 //icon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath);
-                tray.Icon = Properties.Resources.Icon;               
+                tray.Icon = Properties.Resources.Icon;
 
                 updateTrayIcon(0);
                 updateTrayText("Start");
@@ -128,44 +128,54 @@ namespace AttinyListener
             tray.Text = Application.ProductName + " - " + text;
         }      
 
+        private static Font trayIconFont        = new Font("Arial", 18);
+        private static SolidBrush trayIconBrush = new SolidBrush(Color.Black);
+
         public static void updateTrayIcon(int temperature = 0) 
         {
-            Color color = Color.Black;
+            if (String.IsNullOrEmpty(temperature.ToString()))
+            {
+                return;
+            }
 
             // determine a color for the temperature value
             if (temperature < 15)
             {
-                color = Color.DeepSkyBlue;
+                trayIconBrush.Color = Color.DeepSkyBlue;
             }
             else if (temperature >= 15 && temperature < 20)
             {
-                color = Color.Green;
+                trayIconBrush.Color = Color.Green;
             }
             else if (temperature >= 20 && temperature < 25)
             {
-                color = Color.Yellow;
+                trayIconBrush.Color = Color.Yellow;
             }
             else if (temperature >= 25 && temperature < 30)
             {
-                color = Color.Orange;
+                trayIconBrush.Color = Color.Orange;
             }
             else if (temperature >= 30)
             {
-                color = Color.Red;
+                trayIconBrush.Color = Color.Red;
             }
 
-            // draw the number into a bitmap            
-            Bitmap bitmap = new Bitmap(32, 32);
-            Graphics graphics   = Graphics.FromImage(bitmap);
+            // draw the number into a bitmap                        
+            Bitmap trayIconBitmap       = new Bitmap(32, 32);
+            Graphics trayIconGraphics   = Graphics.FromImage(trayIconBitmap);                  
 
-            graphics.DrawString(temperature.ToString(), new Font("Arial", 18), new SolidBrush(color), 0, 4);
+            trayIconGraphics.DrawString(temperature.ToString(), trayIconFont, trayIconBrush, 0, 4);
 
             // generate ico from bitmap
-            IntPtr hIcon    = bitmap.GetHicon();
-            Icon ico        = Icon.FromHandle(hIcon);
+            IntPtr hIcon    = trayIconBitmap.GetHicon();
+            Icon ico        = Icon.FromHandle(hIcon);                    
 
             // set the new icon
             tray.Icon       = ico;
+
+            trayIconBitmap.Dispose();
+            trayIconGraphics.Dispose();
+            ico.Dispose();
         }
 
         public static bool TestSubmiter()
