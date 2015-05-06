@@ -8,6 +8,7 @@ using System.Management;
 using System.Windows;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace AttinyListener
 {
@@ -131,6 +132,9 @@ namespace AttinyListener
         private static Font trayIconFont        = new Font("Arial", 18);
         private static SolidBrush trayIconBrush = new SolidBrush(Color.Black);
 
+        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = CharSet.Auto)]
+        extern static bool DestroyIcon(IntPtr handle);
+
         public static void updateTrayIcon(int temperature = 0) 
         {
             if (String.IsNullOrEmpty(temperature.ToString()))
@@ -168,14 +172,18 @@ namespace AttinyListener
 
             // generate ico from bitmap
             IntPtr hIcon    = trayIconBitmap.GetHicon();
-            Icon ico        = Icon.FromHandle(hIcon);                    
+            Icon ico        = Icon.FromHandle(hIcon);          
 
             // set the new icon
-            tray.Icon       = ico;
+            DestroyIcon(tray.Icon.Handle);
+            tray.Icon       = (Icon) ico.Clone();
 
+            // clean up icon
             trayIconBitmap.Dispose();
             trayIconGraphics.Dispose();
             ico.Dispose();
+
+            DestroyIcon(ico.Handle);
         }
 
         public static bool TestSubmiter()

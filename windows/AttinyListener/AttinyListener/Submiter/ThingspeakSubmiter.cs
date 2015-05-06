@@ -72,6 +72,9 @@ namespace AttinyListener
             try
             {
                 string result = request.DownloadString(API_URL + API_COMMAND_RETRIEVE + "/" + this.ChannelId + "/feed/last.json");
+
+                request.Dispose();
+
                 if (String.IsNullOrEmpty(result) || result == "0")
                 {
                     return false;
@@ -93,6 +96,8 @@ namespace AttinyListener
             
             // submit data to thingspeak
             string result = request.DownloadString(API_URL + API_COMMAND_UPDATE);
+
+            request.Dispose();
 
             // result is 0, if the update was not successfull
             if (String.IsNullOrEmpty(result) || result == "0") 

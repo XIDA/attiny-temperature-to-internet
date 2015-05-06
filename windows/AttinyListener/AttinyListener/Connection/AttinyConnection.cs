@@ -167,7 +167,7 @@ namespace AttinyListener
                     
                     if (temperatureList.Count == submiter.SubmitInterval)
                     {
-                        this.submiter.SubmitData(temperatureList.Average().ToString().Replace(".", ","));
+                        this.submiter.SubmitData(temperatureList.Average().ToString().Replace(",", "."));
                         this.temperatureList.Clear();
                     }                    
                 }
