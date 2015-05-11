@@ -140,13 +140,19 @@ namespace AttinyListener
                 return true;
             }
             return false;
-        }                        
-		
+        }
+
+        private void reconnect()
+        {
+            this.Close();
+            this.Open();
+        }
 
         private void ErrorReceivedHandler(object sender, SerialErrorReceivedEventArgs e)
         {
             //Console.WriteLine("Error!");
             //Console.WriteLine(e.EventType);
+            this.reconnect();
         }
 
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
@@ -174,8 +180,10 @@ namespace AttinyListener
             }
             catch (TimeoutException exception)
             {
-                Console.WriteLine("Timeout exception " + exception.Message);
-                MessageBox.Show("Timeout exception " + exception.Message);
+                //Console.WriteLine("Timeout exception " + exception.Message);
+                //MessageBox.Show("Timeout exception " + exception.Message);
+                // reconnect on timeout
+                this.reconnect();
             }
         }       
     }
