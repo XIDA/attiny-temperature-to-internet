@@ -87,23 +87,30 @@ namespace AttinyListener
             return true;
         }
 
-        public bool UpdateChannel(string data) {            
-            //MessageBox.Show(data);
-            WebClient request = this.webClient;
+        public bool UpdateChannel(string data) {
+            try
+            {
+                //MessageBox.Show(data);
+                WebClient request = this.webClient;
 
-            // add data for field
-            request.QueryString.Add(this.FieldName, data);
-            
-            // submit data to thingspeak
-            string result = request.DownloadString(API_URL + API_COMMAND_UPDATE);
+                // add data for field
+                request.QueryString.Add(this.FieldName, data);
 
-            request.Dispose();
+                // submit data to thingspeak
+                string result = request.DownloadString(API_URL + API_COMMAND_UPDATE);
 
-            // result is 0, if the update was not successfull
-            if (String.IsNullOrEmpty(result) || result == "0") 
+                request.Dispose();
+
+                // result is 0, if the update was not successfull
+                if (String.IsNullOrEmpty(result) || result == "0")
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
             {
                 return false;
-            }
+            }          
 
             return true;           
         }
