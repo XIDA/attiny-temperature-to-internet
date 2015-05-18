@@ -80,7 +80,14 @@ namespace AttinyListener
         public static void Main(string[] args)
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);           
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            if (Connection.AvailablePorts.Length == 0)
+            {
+                MessageBox.Show("No Serial port available! Please ensure that the Temperature sensor is connected and restart the application.");
+                Application.Exit();
+                return;
+            }
 
             using (tray)
             {

@@ -24,6 +24,11 @@ namespace AttinyListener
             {
                 this.portName = value;
 
+                if (serialPort == null)
+                {
+                    return;
+                }
+
                 Boolean isOpen = serialPort.IsOpen;
                 if (isOpen)
                 {
@@ -49,6 +54,11 @@ namespace AttinyListener
             set
             {
                 this.timeout = value;
+
+                if (serialPort == null)
+                {
+                    return;
+                }
 
                 Boolean isOpen = serialPort.IsOpen;
                 if (isOpen)
@@ -83,8 +93,13 @@ namespace AttinyListener
             this.timeout = timeout;
             this.submiter = submiter;
 
+            if (this.AvailablePorts.Length == 0)
+            {
+                Application.Exit();
+                return;
+            }
             
-            if (!this.AvailablePorts.Contains(portName))
+            if (this.AvailablePorts.Length > 0 && !this.AvailablePorts.Contains(portName))
             {
                 this.portName = this.AvailablePorts.First();
             }
@@ -116,6 +131,11 @@ namespace AttinyListener
         }
 
         public bool Open() {
+            if (this.serialPort == null)
+            {
+                return false;
+            }
+
             if (this.serialPort.IsOpen)
             {
                 return true;
@@ -134,7 +154,7 @@ namespace AttinyListener
         }	
 
         public bool Close() {
-            if(this.serialPort.IsOpen) 
+            if(this.serialPort != null && this.serialPort.IsOpen) 
             {
                 this.serialPort.Close();
                 return true;
