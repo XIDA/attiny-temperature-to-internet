@@ -184,8 +184,18 @@ namespace AttinyListener
 
         private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.SaveForm();
+            //this.SaveForm();
             //Application.Exit();
+
+            if (MainClass.ValidateSettings())
+            {
+                MainClass.Connection.Open();
+            }
+            else
+            {
+                MessageBox.Show("Settings Invalid.");
+                Application.Exit();
+            }
         }
 
         private void SettingsForm_Load(object sender, EventArgs e)
