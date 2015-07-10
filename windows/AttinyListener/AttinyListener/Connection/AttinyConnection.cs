@@ -185,7 +185,7 @@ namespace AttinyListener
                 double temperature;
                 
                 if (Double.TryParse(indata.Replace(".", ","), out temperature))
-                {                    
+                {
                     this.temperatureList.Add(temperature);
                     
                     MainClass.updateTrayIcon((int)Math.Round(temperature));
@@ -193,7 +193,12 @@ namespace AttinyListener
                     
                     if (temperatureList.Count == submiter.SubmitInterval)
                     {
-                        this.submiter.SubmitData(temperatureList.Average().ToString().Replace(",", "."));
+                        int temperatureCount = this.temperatureList.Count();
+                        this.temperatureList.Sort();
+                        double median = this.temperatureList.ElementAt(temperatureCount / 2) + this.temperatureList.ElementAt((temperatureCount - 1) / 2);
+                        median /= 2;
+
+                        this.submiter.SubmitData(median.ToString().Replace(",", "."));
                         this.temperatureList.Clear();
                     }                    
                 }
